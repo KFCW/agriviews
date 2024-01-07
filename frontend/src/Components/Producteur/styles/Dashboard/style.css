@@ -1,0 +1,138 @@
+.dash-container {
+  background-color: cadetblue;
+  width: 100%;
+  height: 100vh;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 200px  repeat(2,1fr) 260px;
+  grid-template-rows: 1fr  2fr  1fr;
+  grid-template-areas: "left main main right"
+                                        "left main main right"
+                                        "left main main right";
+}
+
+.side-left{
+  grid-area: left;
+  background-color: #fff;
+  height: 100vh;
+}
+.side-right{
+  grid-area: right;
+  background-color: #edf2f4;
+}
+.side-content{
+  grid-area: main;
+  background-color: #edf2f4;
+  height: 100%;
+}
+
+.logo{
+   text-align: center;
+   font-size: 1.3rem;
+   text-align: center;
+   font-weight: bold;
+   margin-top: 3.3rem;
+   color: #6a994e;
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  color: #212529;
+  gap: .9rem;
+  margin-left: 2rem;
+  margin-top: 1.6rem;
+  font-size: clamp(14px , 4vw, 1rem);
+}
+
+ .setting{
+  padding-top: 1.2rem !important;
+}
+
+/* START-MAIN */
+
+.search{
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+
+.search-icon{
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1rem;
+  left: .9rem;
+}
+
+.search input{
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: .5rem 2rem;
+  overflow: hidden;
+  font-family: inherit;
+font-size: .8rem;
+}
+
+.all-box{
+  margin-top: 1.4rem;
+  margin-left: 2rem;
+}
+
+.first-box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.box-client{
+  width: 240px;
+  height: 110px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+  border-radius: 4px;
+  transition: all .3s ease;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.dot{
+  margin-left: 13rem;
+  margin-top: 10px;
+  color: #9caea9;
+  font-size: 1.2rem;
+}
+
+.concu{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icons-client{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 1.1rem;
+  background-color: #edf2fb;
+}
+
+.span-clients {
+  font-size: .9rem;
+  color: grey;
+  margin-top: .5rem;
+}
+
+.number{
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+/* END-MAIN */

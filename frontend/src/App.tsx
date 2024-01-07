@@ -1,34 +1,22 @@
-import { Routes, Route } from 'react-router-dom'
-import Login from './Pages/Login/Login'
-import Signup from './Pages/Signup/Signup'
-import ErrorPage from './Pages/ErrorPage/ErrorPage'
-import HomePage from './Pages/HomePage/HomePage'
-import ProductsPage from './Pages/ProductPage/ProductsPage'
-import Dashbord from './Pages/Dashboard/Dashbord'
-import ProductPage from './Components/HomePage/ProductPage'
-import ContactPage from './Pages/ContactPage/ContactPage'
-import AgriviewPage from './Pages/AgriviewPage/AgriviewPage'
-import ShoppingBox from './Components/HomePage/ShoppingBox'
+import {Route, Routes } from "react-router-dom";
+import Clients from "./Components/Clients/App";
+
+import Productor from "./Components/Producteur/App";
+import Admin from "./Components/Admin/App";
+import Page from "./Page"
 
 
-function App() {
-
+function App(): JSX.Element {
   return (
     <div className="app-container">
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/agriviews" element={<AgriviewPage />} />
-        <Route path="/shoppingbox" element={<ShoppingBox />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/dashbord" element={<Dashbord />} />
-        <Route path='*' element={<ErrorPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Page />} />
+          <Route path="/user/*" element={<Clients />} />
+          <Route path="/productor/*" element={<Productor />} />
+          <Route path="/admin/*" element={<Admin />} />
+        </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

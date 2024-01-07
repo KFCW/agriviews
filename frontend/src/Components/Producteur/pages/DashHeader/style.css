@@ -1,0 +1,52 @@
+.dash__header{
+    margin-top: 1rem;
+    flex: 4;
+    position: sticky;
+    z-index: 100;
+    width: 100%;
+}
+
+.searchIcon{
+    position: relative;
+    left: -2rem;
+}
+
+.formDash{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 920px) {
+    .searchIcon{
+        display: none!important;
+    }
+    .formDash{
+        margin-left: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 556px) {
+    .formDash input{
+       display: none;
+    }
+
+    .formDash{
+        margin-left: 2rem;
+    }
+
+    .profil{
+        margin: auto;
+    }
+    
+}
+
+@media screen and (max-width: 356px) {
+    .profil{
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        left: -7px;
+    }
+}

@@ -1,0 +1,69 @@
+.container__feeds{
+    flex: 4;
+    margin-top: 1rem;
+}
+
+.head__feed{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    background-color: #fff;
+    padding: .3rem 1.3rem;
+    border: 1px solid #1b2a41;
+}
+
+.num_f span{
+    margin-left: .4rem;
+}
+
+.list__feeds{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    cursor: pointer;
+    margin: 0 2rem;
+    position: relative;
+    top: 1rem;
+}
+
+.feedbackslist li {
+    list-style: none;
+}
+
+.feedbtn__backs{
+    margin-left: 2.5rem;
+    padding: .8rem 1rem;
+    border: none;
+    outline: none;
+    background-color: #1b2a41!important;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.list__feeds img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    flex-shrink: 0;
+}
+
+.info__client  {
+font-size: .8rem;
+}
+
+.info__client h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.info__client span {
+    font-size: .6rem;
+}

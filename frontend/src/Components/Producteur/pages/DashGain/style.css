@@ -1,0 +1,43 @@
+.container__gain{
+    flex: 4;
+    margin-top: 1rem;
+}
+
+.sold_dash{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 2rem 2rem;
+    width: calc(100% - 4rem);
+}
+
+.boxdash__img img {
+    width:270px;
+    overflow: hidden;
+}
+
+.content__info h4{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.content__info button {
+    outline: none;
+    padding: .6rem 2rem;
+    border: none;
+    background-color: #073b4c;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: All .3s ease-in-out;
+}
+
+.content__info button:hover{
+    background-color: #fff;
+    color: #073b4c;
+    border: 1px solid #073b4c;
+}
+

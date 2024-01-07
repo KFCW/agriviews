@@ -1,0 +1,44 @@
+.container__vente {
+    flex: 4;
+    margin-top: 1rem;
+}
+
+.icon__dash {
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    background-color: #fff;
+    padding: .3rem 1.3rem;
+    border: 1px solid #1b2a41;
+}
+
+.box__stock{
+    display: flex;
+    align-items: center;
+}
+
+.box__stock span{
+    margin-left: .4rem;
+}
+
+.category__title{
+    position: relative;
+    top: 1rem;
+    background-color: #1b2a41;
+    color: #fff;
+}
+
+.categ {
+    margin: 0 auto;
+}
+
+.ul__container {
+  margin: 0 2rem;
+  position: relative;
+  top: 2rem;
+}
+
+.category__1 {
+  margin-top: 1.5rem;
+}
