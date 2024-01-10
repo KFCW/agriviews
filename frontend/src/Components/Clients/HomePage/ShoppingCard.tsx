@@ -28,7 +28,7 @@ const ShoppingCard : React.FC<ShoppingCardProps> = ({className}) => {
     console.log("shopping cart : ",shoppingCart)
     return (
         <>
-        <Link to="/shoppingbox">
+        <Link to="/user/shoppingbox">
             <div className={className}>
                 {shoppingCart.items.length}
             </div>

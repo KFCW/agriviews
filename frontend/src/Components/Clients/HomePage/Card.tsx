@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
         {filteredProducts.length === 0 ? (
             <h3>Aucun produit ne correspond à votre recherche.</h3>
         ):(filteredProducts.map((val) => (
-          <Link key={val.id} to={`/product/${val.id}`} className="product">
+          <Link key={val.id} to={`/user/product/${val.id}`} className="product">
             <div className='product'>
               <div className="top__card">
                 <FaShoppingBasket className="panier" />
