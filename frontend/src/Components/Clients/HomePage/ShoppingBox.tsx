@@ -105,16 +105,16 @@ const ShoppingBox: React.FC = () => {
         <p className="total-price">Total : {(Cart.items.reduce((prev, curr) => prev + curr.price * curr.quantity, 0)).toFixed(2)} F CFA</p>
         <div className="operator">
           <div className={`moov ${selectedOperator === 'moov' && 'selected'}`} onClick={() => handleOperatorClick('moov')}>
-            Moov
+            
           </div>
           <div className={`moov Orange ${selectedOperator === 'orange' && 'selected'}`} onClick={() => handleOperatorClick('orange')}>
-            Orange
+           
           </div>
           <div className={`moov mtn ${selectedOperator === 'mtn' && 'selected'}`} onClick={() => handleOperatorClick('mtn')}>
-            MTN
+            
           </div>
           <div className={`moov wave ${selectedOperator === 'wave' && 'selected'}`} onClick={() => handleOperatorClick('wave')}>
-            Wave
+            
           </div>
         </div>
         {paymentStatus === 'processing' && (
@@ -138,7 +138,7 @@ const ShoppingBox: React.FC = () => {
               pattern="\d"
             />
            {inputError && <p style={{ color: 'red' }}>Veuillez entrer un nombre valide.</p>}
-          <button onClick={handleValidation} className="btn mt-2">Procéder au paiement</button>
+          <button onClick={handleValidation} className="btn mt-2 mb-3">Procéder au paiement</button>
           </div>
         )}
       </div>

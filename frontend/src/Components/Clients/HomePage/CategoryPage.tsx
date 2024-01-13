@@ -19,7 +19,7 @@ const CategoryPage: React.FC = () => {
             <ProductsWelcome />
             <ChoiceCategories />
             <h2>Catégorie: {id}</h2>
-            {/* Ajoutez le contenu spécifique à chaque catégorie ici */}
+           
             <Footer />
         </>
     );

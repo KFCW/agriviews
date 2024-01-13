@@ -1,0 +1,17 @@
+.container__form {
+    display: flex;
+    width: 450px;
+    flex-wrap: wrap;
+}
+
+.img__descrip{
+    background-color: #fff;
+    border-radius: 0 0 .3rem .3rem;
+    text-align: center;
+    padding: 1rem 1rem;
+}
+
+.img__left video {
+    width: 100%;
+    height: 100%;
+}

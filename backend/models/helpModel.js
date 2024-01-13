@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const helpSchema = new mongoose.Schema({
-    email : {type : Number, require: true, unique : true},
+    email : {type : String, require: true, unique : true, ref:"User"},
     objet : {type : String, require: true},
     message : {type : String, require: true}
 })

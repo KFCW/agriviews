@@ -7,8 +7,6 @@ interface DataRegister {
   name: string;
   email: string;
   password: string;
-  image: File | null;
-  role: string;
 }
 
 const Signup: React.FC = () => {
@@ -16,22 +14,13 @@ const Signup: React.FC = () => {
     name: '',
     email: '',
     password: '',
-    image: null,
-    role: '',
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLInputElement>) => {
-    const { name, value, type } = e.target;
-
-    if (type === 'file') {
-      setRegisterData((prevData) => ({
-        ...prevData,
-        image: e.target.files ? e.target.files[0] : null,
-      }));
-    } else {
-      setRegisterData((prevData) => ({ ...prevData, [name]: value }));
-    }
+   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setRegisterData((prevData) => ({ ...prevData, [name]: value }));
   };
+  
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -92,7 +81,7 @@ const Signup: React.FC = () => {
               </button>
               <h3 className="text-xs mt-4 ml-8 text-gray mb-3">
                 Déjà membre?
-                <Link to="/user/signup" className="underline text-whiteBlue">
+                <Link to="/user/" className="underline text-whiteBlue">
                   Se connecter ici.
                 </Link>
               </h3>

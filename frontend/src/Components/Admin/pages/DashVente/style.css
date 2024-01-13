@@ -26,7 +26,6 @@
 
 .product-form input, .product-form select {
     margin-left: 1rem;
-    border: none;
     outline: none;
     padding: 15px 30px;
     border: 2px solid #ccc;
@@ -43,6 +42,7 @@
     padding: 1rem 1rem;
     outline: none;
 }
+
 
 .product-form div .addBtn {
     padding: 15px 30px;

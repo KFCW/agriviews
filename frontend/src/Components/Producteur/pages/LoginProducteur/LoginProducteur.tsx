@@ -49,11 +49,11 @@ const LoginProducteur:React.FC = () => {
               <form onSubmit={handleSubmit} className="form">
                 <div className="email-input email-inputs">
                   <label htmlFor="id">Identifiant</label>
-                  <input type="text"  id="id" onChange={handleChange} value={connectData.id} placeholder="Identifiant..." />
+                  <input type="text" name='id'  id="id" onChange={handleChange} value={connectData.id} placeholder="Identifiant..." />
                 </div>
                 <div className="email-input">
                   <label htmlFor="password">Mot de passe</label>
-                  <input type="password"  id='password' onChange={handleChange} value={connectData.password} placeholder='Mot de passe...' />
+                  <input type="password" name='password' id='password' onChange={handleChange} value={connectData.password} placeholder='Mot de passe...' />
                 </div>
                 <div className="box-button mt-8">
                   <button type="submit" className="bg-whiteBlue m-auto p-3 uppercase text-whiteSignup text-center block rounded mb-5">Se Connecter</button>

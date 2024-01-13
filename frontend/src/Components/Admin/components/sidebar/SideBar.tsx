@@ -7,6 +7,7 @@ import { FaUserTag } from "react-icons/fa";
 import { BsNewspaper } from "react-icons/bs";
 import { IoLogOut } from "react-icons/io5";
 import { IoIosSettings } from "react-icons/io";
+import { VscFeedback } from "react-icons/vsc";
 import { CSSProperties, ReactNode } from 'react';
 import './style.css';
 
@@ -137,6 +138,7 @@ const SideBar: React.FC = () => {
         <MenuItem to="add" icon={<IoBagAdd />} label="Produits" isActive={activeLink === '/add'} onClick={() => handleLinkClick('/add')} />
         <MenuItem to="formation" icon={<BsNewspaper />} label="Formations" isActive={activeLink === '/formation'} onClick={() => handleLinkClick('/formation')} />
         <MenuItem to="gain" icon={<IoCard />} label="Virements" isActive={activeLink === '/gain'} onClick={() => handleLinkClick('/gain')} />
+        <MenuItem to="feedback" icon={<VscFeedback />} label="Demandes" isActive={activeLink === '/feedback'} onClick={() => handleLinkClick('/feedback')} />
         <MenuItem to="settings" icon={<IoIosSettings />} label="Paramètres" isActive={activeLink === '/settings'} onClick={() => handleLinkClick('/settings')} />
           <hr className="hr" style={styles.hr} />
         <div style={styles.dash__deconenct} className="dash__deconenct">

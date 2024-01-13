@@ -5,13 +5,17 @@ import NavBar from "./NavBar";
 import "../../Clients/styles/Components/NavBar/DetailsProduct/style.css";
 import { BsBasket } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import {addItem} from '../../Clients/redux/slice/cartSlice'
+import { addItem } from '../../Clients/redux/slice/cartSlice'
 
+interface CommentFormData {
+  commentaire: string;
+}
 
 const ProductPage: React.FC = () => {
-  const { id } = useParams<{id:string}>();
+  const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | undefined>(undefined);
   const [nbProduct, setNbProduct] = useState<number>(1);
+  const [commentFormData, setCommentFormData] = useState<CommentFormData>({ commentaire: "" });
 
   useEffect(() => {
     const trueProduct = Data.find((p) => p.id === parseInt(id || "", 10));
@@ -27,7 +31,7 @@ const ProductPage: React.FC = () => {
   };
 
   const addingInfo = useRef<HTMLSpanElement>(null);
-  let timerInfo:number;
+  let timerInfo: number;
   let display = true;
 
   const dispatch = useDispatch();
@@ -36,15 +40,15 @@ const ProductPage: React.FC = () => {
     event.preventDefault();
 
     if (product) {
-    const itemAdd = {
-    id : product.id ,
-    image : product.image,
-    titre : product.titre,
-    price : product.price,
-    quantity: nbProduct,
-  };
+      const itemAdd = {
+        id: product.id,
+        image: product.image,
+        titre: product.titre,
+        price: product.price,
+        quantity: nbProduct,
+      };
 
-  dispatch(addItem(itemAdd));
+      dispatch(addItem(itemAdd));
 
       if (addingInfo.current) {
         addingInfo.current.innerText = "Ajouté au panier";
@@ -94,6 +98,22 @@ const ProductPage: React.FC = () => {
           )}
         </div>
       </div>
+      <form className="feedback">
+        <div className="feed">
+          <label htmlFor="msg">Commentaire : </label>
+          <textarea
+            id="msg"
+            cols={70}
+            rows={5}
+            placeholder="Écrivez votre commentaire ici..."
+            value={commentFormData.commentaire}
+            onChange={(e) => setCommentFormData({ commentaire: e.target.value })}
+          ></textarea>
+        </div>
+        <div className="button">
+          <button type="submit">Envoyer le message</button>
+        </div>
+      </form>
     </>
   );
 };

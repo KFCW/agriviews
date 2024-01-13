@@ -1,35 +1,61 @@
 const express  = require("express");
-const bodyparser = require("body-parser");
-const dotenv = require('dotenv')
-const mongoose = require('mongoose');
+const cors = require("cors");
+const morgan = require('morgan');
+const path   = require('path');
+const connectionDB = require("./db/db");
+const session = require("express-session");
 
-dotenv.config({path: "process.env"})
 
-const db  = process.env.DATABASE_URL
-const userRoutes = require('./routes/user')
+// Importation routes
+const userRoutes = require('./routes/userRoute')
+const adminRoutes = require("./routes/adminRoute")
+const demandeRoutes = require("./routes/demandeRoute")
+const productRoutes = require('./routes/productRoute')
+const helpRoutes = require("./routes/helpRoute")
+
 
 // Connection à la  DB
-mongoose.connect(`${db}`)
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+connectionDB();
 
 // Création d'application express()   
 const app = express();
 
-// Extraire le corps du json() express.json() == body-parser()
-app.use(bodyparser.json());
+// Logger des requetes
+app.use(morgan("dev"));
 
 // Configurer les origines de l'app front et back
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-  });
+app.use(cors());
+
+// Configuration de express-session
+app.use(session({
+    secret: 'agriview', // Clé secrète pour signer les cookies de session
+    resave: false,
+    saveUninitialized: true,
+}));
+
+// Extraire le corps du json() express.json() == body-parser()
+app.use(express.json());
 
 
 // Systeme de routage
-app.use('/api/',userRoutes);
+
+//============= Client Routes ============
+app.use('/api/user',userRoutes);
+app.use('/api/user',userRoutes);
+app.use('/api/user',helpRoutes);
+
+//============= Admin Routes ============
+app.use('/api/admin',adminRoutes);
+app.use('/api/admin/dash',productRoutes);
+
+//============= Producteur Routes =============
+app.use('/api/productor',demandeRoutes);
+app.use('/api/feedback',demandeRoutes);
+app.use('/api/user',productRoutes);
+
+
+//Stockage images
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 

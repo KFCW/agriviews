@@ -6,7 +6,7 @@ interface FormData {
   id: string;
   title: string;
   description: string;
-  image: File | null;
+  image: string;
   price: number;
   category: string;
 }
@@ -15,7 +15,7 @@ const initialFormData: FormData = {
   id: uuidv4(),
   title: '',
   description: '',
-  image: null,
+  image: "",
   price: 0,
   category: '',
 };
@@ -25,16 +25,10 @@ const DashVente: React.FC = () => {
   const [products, setProducts] = useState<FormData[]>([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | HTMLInputElement>) => {
-    const { name, value, type } = e.target;
-
-    if (type === 'file') {
-      const fileInput = e.target as HTMLInputElement;
-      const file = fileInput.files ? fileInput.files[0] : null;
-      setFormData((prevData) => ({ ...prevData, [name]: file }));
-    } else {
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-    }
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+  
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -58,7 +52,7 @@ const DashVente: React.FC = () => {
         <h3>Nos Produits</h3>
       </div>
       <form onSubmit={handleSubmit} className="product-form">
-        <div>
+        <div className='first__input'>
           <label htmlFor="id">Id: </label>
           <input
             type="text"
@@ -96,9 +90,10 @@ const DashVente: React.FC = () => {
         <div>
           <label htmlFor="image">Image: </label>
           <input
-            type="file"
+            type="text"
             id="image"
             name="image"
+            value={formData.image}
             onChange={handleChange}
             accept="image/*"
           />

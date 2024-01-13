@@ -7,6 +7,7 @@ import DashClient from './pages/DashClient/DashClient'
 import DashGain from './pages/DashGain/DashGain'
 import DashVente from './pages/DashVente/DashVente'
 import SideBar from './components/sidebar/SideBar'
+import DashFeedback from './pages/DashFeedback/DashFeedback'
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
               <Route path="/client" element={<DashClient />} />
               <Route path="/gain" element={<DashGain />} />
               <Route path="/add" element={<DashVente />} />
+              <Route path="/feedback" element={<DashFeedback />} />
       </Routes>
     </div>
   )

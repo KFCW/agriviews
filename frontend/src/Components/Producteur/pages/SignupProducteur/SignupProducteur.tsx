@@ -20,20 +20,31 @@ const SignupProducteur: React.FC = () => {
     modePaye: ""
   });
 
+  const [selectedPayment, setSelectedPayment] = useState('');
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setRegisterData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handlePaymentChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedPayment(event.target.value);
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log('Données soumises :', registerData);
-  };
+    // Ajoutez ici la logique pour soumettre les données à votre backend
 
-  const [selectedPayment, setSelectedPayment] = useState('');
-
-  const handlePaymentChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedPayment(event.target.value);
+    // Ensuite, vous pouvez réinitialiser les données du formulaire si nécessaire
+    setRegisterData({
+      name: '',
+      email: '',
+      password: '',
+      tel: '',
+      modePaye: ''
+    });
+    setSelectedPayment('');
   };
 
   return (
@@ -43,9 +54,9 @@ const SignupProducteur: React.FC = () => {
           <img src={image} alt="image de connexion" className="img" />
         </div>
         <div className="right-login">
-          <h2 className="title-conenct">Nouveaux producteurs !</h2>
+          <h2 className="title-conenct">Demande Producteur !</h2>
           <p className="title-para">
-            Veuillez vous inscrire afin de bénéficier de tous nos produits.
+            Veuillez vous inscrire afin de bénéficier de votre propre tableau de bord.
           </p>
           <form onSubmit={handleSubmit} className="form">
             <div className="email-input">
